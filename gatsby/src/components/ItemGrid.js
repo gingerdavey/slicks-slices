@@ -2,7 +2,6 @@ import React from 'react';
 import { ItemsGrid, ItemStyles } from '../styles/Grids';
 
 const ItemGrid = ({ items }) => {
-  console.log('test');
   return (
     <ItemsGrid>
       {items.map((item) => (
