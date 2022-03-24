@@ -8,13 +8,17 @@ import { HomePageGrid } from '../styles/Grids';
 function CurrentlySlicing({ slicemasters }) {
   return (
     <div>
-      <h2 className="center">
-        <span className="mark tilt">Slicemasters On</span>
+      <h2 className="text-center leading-1">
+        <span className="mark relative inline-block -rotate-2 text-3xl leading-0">
+          Slicemasters On
+        </span>
       </h2>
-      <p>Standing by, ready to slice you up!</p>
+      <p className="my-5 text-xl leading-0">
+        Standing by, ready to slice you up!
+      </p>
       {!slicemasters && <LoadingGrid count={8} />}
       {slicemasters && !slicemasters?.length && (
-        <p>No one is working right now!</p>
+        <p className="my-5 text-xl leading-0">No one is working right now!</p>
       )}
       {slicemasters?.length && <ItemGrid items={slicemasters} />}
     </div>
@@ -24,12 +28,16 @@ function CurrentlySlicing({ slicemasters }) {
 function HotSlices({ hotSlices }) {
   return (
     <div>
-      <h2 className="center">
-        <span className="mark tilt">Hot Slicers</span>
+      <h2 className="text-center leading-1">
+        <span className="mark relative inline-block -rotate-2 text-3xl leading-0">
+          Hot Slices!
+        </span>
       </h2>
-      <p>Come on buy the slice</p>
+      <p className="my-5 text-xl leading-0">Come on by, buy the slice!</p>
       {!hotSlices && <LoadingGrid count={8} />}
-      {hotSlices && !hotSlices?.length && <p>No one is working right now!</p>}
+      {hotSlices && !hotSlices?.length && (
+        <p className="my-5 text-xl leading-0">No one is working right now!</p>
+      )}
       {hotSlices?.length && <ItemGrid items={hotSlices} />}
     </div>
   );
@@ -39,9 +47,11 @@ const HomePage = () => {
   const { slicemasters, hotSlices } = useLatestData();
   return (
     <div>
-      <div className="center">
-        <h1>The Best Pizza Downtown!</h1>
-        <p>Open 11am to 11pm Every Single Day</p>
+      <div className="text-center">
+        <h1 className="text-4.25xl">The Best Pizza Downtown!</h1>
+        <p className="text-xl my-5 leading-0">
+          Open 11am to 11pm Every Single Day
+        </p>
         <HomePageGrid>
           <CurrentlySlicing slicemasters={slicemasters} />
           <HotSlices hotSlices={hotSlices} />

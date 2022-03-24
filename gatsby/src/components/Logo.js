@@ -6,13 +6,13 @@ const LogoStyles = styled.div`
   /* This value controls the entire size of the logo*/
   font-size: 6px;
   font-size: clamp(1px, 0.65vw, 8px);
-  width: 30em;
-  height: 30em;
+  width: 24em;
+  height: 24em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   margin: 0;
-  --borderSize: 1em;
+  --borderSize: 0.75em;
   background: white url(${stripes});
-  background-size: 150em;
+  background-size: 120em;
   border: var(--borderSize) solid white;
   display: flex;
   .inner {
@@ -23,22 +23,18 @@ const LogoStyles = styled.div`
     grid-template-rows: 20% 1fr 1fr;
     align-content: center;
   }
-  .est {
-    font-size: 1.5em;
-    align-self: center;
-  }
   h1 {
     display: grid;
     grid-template-rows: 8fr 2fr;
     align-items: center;
     margin: 0;
     grid-row: 2 / span 2;
-    grid-gap: 2em;
-    transform: translateY(-0.7em);
+    grid-gap: 2.5em;
+    transform: translateY(-1.6em);
   }
 
   .slices {
-    font-size: 3.2em;
+    font-size: 4.8em;
     letter-spacing: 0.2em;
     transform: translateY(-0.15em);
   }
@@ -49,7 +45,7 @@ const LogoStyles = styled.div`
     perspective: 100px;
   }
   .letter {
-    font-size: 5em;
+    font-size: 7.5em;
     color: var(--red);
     --scale: 1;
     --rotate: -10deg;
@@ -60,7 +56,7 @@ const LogoStyles = styled.div`
       translateX(var(--translateX)) translateY(var(--translateY))
       rotateX(var(--rotateX));
     display: inline-block;
-    line-height: 1;
+    line-height: 1.15;
     transition: transform 0.3s;
     &.S {
       --translateX: -0.05;
@@ -102,9 +98,9 @@ export default function Logo() {
   return (
     <LogoStyles className="logo">
       <div className="inner">
-        <span className="est">EST 1994</span>
+        <span className="self-center text-xxs">EST 1994</span>
         <h1>
-          <span className="slicks">
+          <span className="slicks leading-default">
             <span className="letter S">S</span>
             <span className="letter l">l</span>
             <span className="letter i">i</span>

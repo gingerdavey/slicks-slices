@@ -7,17 +7,6 @@ const NavStyles = styled.nav`
   .logo {
     transform: translateY(-25%);
   }
-  ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto 1fr 1fr;
-    grid-gap: 2rem;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    list-style: none;
-    margin-top: -6rem;
-  }
   li {
     --rotate: -2deg;
     transform: rotate(var(--rotate));
@@ -36,8 +25,6 @@ const NavStyles = styled.nav`
     }
   }
   a {
-    font-size: 3rem;
-    text-decoration: none;
     &:hover {
       color: var(--red);
     }
@@ -49,23 +36,31 @@ const NavStyles = styled.nav`
 
 const Nav = () => (
   <NavStyles>
-    <ul>
+    <ul className="grid gap-5 grid-cols-slick m-0 -mt-15 p-0 text-center list-none items-center">
       <li>
-        <Link to="/">Hot now</Link>
+        <Link className="block no-underline text-3xl" to="/">
+          Hot Now
+        </Link>
       </li>
       <li>
-        <Link to="/pizzas">Pizzas</Link>
+        <Link className="block no-underline text-3xl" to="/pizzas">
+          Pizza Menu
+        </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link className="block no-underline text-3xl" to="/">
           <Logo />
         </Link>
       </li>
       <li>
-        <Link to="/slicemasters">SliceMasters</Link>
+        <Link className="block no-underline text-3xl" to="/slicemasters">
+          SliceMasters
+        </Link>
       </li>
       <li>
-        <Link to="/order">Order Ahead!</Link>
+        <Link className="block no-underline text-3xl" to="/order">
+          Order Ahead!
+        </Link>
       </li>
     </ul>
   </NavStyles>

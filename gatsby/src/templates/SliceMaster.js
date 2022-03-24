@@ -9,7 +9,7 @@ const SliceMasterPage = ({ data: { slicemaster } }) => (
       title={slicemaster.name}
       image={slicemaster.image?.asset?.fluid?.src}
     />
-    <div className="center">
+    <div className="text-center">
       <Img fluid={slicemaster.image.asset.fluid} />
       <h2>
         <span className="mark">{slicemaster.name}</span>

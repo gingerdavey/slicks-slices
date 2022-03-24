@@ -27,7 +27,7 @@ const SingleBeerStyles = styled.div`
 const BeersPage = ({ data }) => (
   <>
     <SEO title={`Beers! We have ${data.beers.nodes.length} in stock`} />
-    <h2 className="center">
+    <h2 className="text-center">
       We have {data.beers.nodes.length} Beers Available. Dine in only!
     </h2>
     <BeerGridStyles>

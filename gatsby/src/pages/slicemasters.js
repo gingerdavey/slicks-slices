@@ -30,7 +30,7 @@ const SliceMasterStyles = styled.div`
     background: var(--yellow);
     padding: 1rem;
     margin: 2rem;
-    margin-top: -6rem;
+    margin-top: -4rem;
     z-index: 2;
     position: relative;
     transform: rotate(1deg);
