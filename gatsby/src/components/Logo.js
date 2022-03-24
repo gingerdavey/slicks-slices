@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import stripes from '../assets/images/stripes.svg';
 
@@ -95,20 +96,65 @@ const LogoStyles = styled.div`
 `;
 
 export default function Logo() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      scale: [1, 1.5, 1],
+      initial: {
+        scale: 1,
+      },
+    },
+  };
+
   return (
     <LogoStyles className="logo">
       <div className="inner">
         <span className="self-center text-xxs">EST 1994</span>
         <h1>
-          <span className="slicks leading-default">
-            <span className="letter S">S</span>
-            <span className="letter l">l</span>
-            <span className="letter i">i</span>
-            <span className="letter c">c</span>
-            <span className="letter k">k</span>
-            <span className="letter apos">'</span>
-            <span className="letter s">s</span>
-          </span>
+          <motion.span
+            className="slicks leading-default"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.span key="letterS" className="letter S" variants={item}>
+              S
+            </motion.span>
+            <motion.span key="letterL" className="letter l" variants={item}>
+              l
+            </motion.span>
+            <motion.span key="letterI" className="letter i" variants={item}>
+              i
+            </motion.span>
+            <motion.span key="letterC" className="letter c" variants={item}>
+              c
+            </motion.span>
+            <motion.span key="letterK" className="letter k" variants={item}>
+              k
+            </motion.span>
+            <motion.span
+              key="letterAPOS"
+              className="letter apos"
+              variants={item}
+            >
+              '
+            </motion.span>
+            <motion.span key="letterSS" className="letter s" variants={item}>
+              s
+            </motion.span>
+          </motion.span>
           <span className="slices">slices</span>
         </h1>
       </div>
