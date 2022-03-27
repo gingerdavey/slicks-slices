@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import Logo from './Logo';
 
 const NavStyles = styled.nav`
-  .logo {
-    transform: translateY(-25%);
-  }
   li {
     --rotate: -2deg;
     transform: rotate(var(--rotate));
@@ -24,41 +21,48 @@ const NavStyles = styled.nav`
       --rotate: 3deg;
     }
   }
-  a {
-    &:hover {
-      color: var(--red);
-    }
-    /*&[aria-current='page'] {
-      color: var(--red);
-    }*/
-  }
 `;
 
 const Nav = () => (
   <NavStyles>
     <ul className="grid gap-5 grid-cols-slick m-0 -mt-15 p-0 text-center list-none items-center">
-      <li>
-        <Link className="block no-underline text-3xl" to="/">
+      <li className="">
+        <Link
+          className="block no-underline text-3xl hover:text-[#FF4949]"
+          to="/"
+        >
           Hot Now
         </Link>
       </li>
       <li>
-        <Link className="block no-underline text-3xl" to="/pizzas">
+        <Link
+          className="block no-underline text-3xl hover:text-[#FF4949]"
+          to="/pizzas"
+        >
           Pizza Menu
         </Link>
       </li>
       <li>
-        <Link className="block no-underline text-3xl" to="/">
+        <Link
+          className="block no-underline text-3xl hover:text-[#FF4949]"
+          to="/"
+        >
           <Logo />
         </Link>
       </li>
       <li>
-        <Link className="block no-underline text-3xl" to="/slicemasters">
+        <Link
+          className="block no-underline text-3xl hover:text-[#FF4949]"
+          to="/slicemasters"
+        >
           SliceMasters
         </Link>
       </li>
       <li>
-        <Link className="block no-underline text-3xl" to="/order">
+        <Link
+          className="block no-underline text-3xl hover:text-[#FF4949]"
+          to="/order"
+        >
           Order Ahead!
         </Link>
       </li>

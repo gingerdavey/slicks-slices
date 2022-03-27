@@ -1,30 +1,5 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
-
-const ToppingStyles = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 4rem;
-  a {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 0 1rem;
-    align-items: center;
-    padding: 5px;
-    background: var(--grey);
-    border-radius: 2px;
-    .count {
-      background: white;
-      padding: 2px 5px;
-    }
-    &[aria-current='page'],
-    .active {
-      background: var(--yellow);
-    }
-  }
-`;
 
 function countPizzasInToppings(pizzas) {
   const counts = pizzas
@@ -82,22 +57,27 @@ const ToppingsFilter = ({ activeTopping }) => {
     // get a list of pizzas
     // count how many pizzas in each topping
     // loop toppings  etc
-    <ToppingStyles>
-      <Link to="/pizzas">
+    <div className="flex flex-wrap gap-[1rem] mb-[4rem]">
+      <Link
+        to="/pizzas"
+        className="text-xl leading-0 grid items-center bg-[#efefef] rounded-[2px] p-[5px] gap-[0_1rem] grid-cols-[auto_1fr]"
+      >
         <span className="name">All</span>
-        <span className="count">{pizzas.nodes.length}</span>
+        <span className="bg-white p-[2px_5px]">{pizzas.nodes.length}</span>
       </Link>
       {toppingsWithCounts.map((topping) => (
         <Link
           to={`/topping/${topping.name}`}
           key={topping.id}
-          className={topping.name === activeTopping ? 'active' : ''}
+          className={`text-xl leading-0 grid items-center bg-[#efefef] rounded-[2px] p-[5px] gap-[0_1rem] grid-cols-[auto_1fr] ${
+            topping.name === activeTopping ? 'bg-[#ffc600]' : 'bg-[#efefef]'
+          }`}
         >
           <span className="name">{topping.name}</span>
-          <span className="count">{topping.count}</span>
+          <span className="bg-white p-[2px_5px]">{topping.count}</span>
         </Link>
       ))}
-    </ToppingStyles>
+    </div>
   );
 };
 export default ToppingsFilter;

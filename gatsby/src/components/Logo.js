@@ -119,7 +119,7 @@ export default function Logo() {
   };
 
   return (
-    <LogoStyles className="logo">
+    <LogoStyles className="logo translate-y-[-25%]">
       <div className="inner">
         <span className="self-center text-xxs">EST 1994</span>
         <h1>
